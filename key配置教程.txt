@@ -1,0 +1,181 @@
+git push 每次都需要输入用户名和密码
+发表于2015/8/21 12:11:47  9301人阅读
+分类： 环境搭建
+
+解决方案：
+
+每次都需要输入用户名和密码是因为你采用的是 https 方式提交代码， 如果采用的是 ssh 方式只需要在版本库中添加用户的 sha 的key就可以实现提交时无需输入用户名和密码。
+详细步骤：
+
+步骤1：
+
+如果你的版本库已经用https 方式创建好了，那么就需要先删除原来的提交方式。在终端执行以下指令：
+
+ git remote rm origin
+ git remote add origin git@github.com:(用户名)/版本库名
+1
+2
+这里我提供一下我的具体例子： 
+https: https://github.com/用户名/GitTest.git 
+ssh: git@github.com:用户名/GitTest.git 
+我是怎么知道的呢？如果你在创建版本库时选择不创建README.md，系统会提示你创建：
+
+https：
+…or create a new repository on the command line
+echo # GitTest >> README.md
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Sugerming/GitTest.git
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/Sugerming/GitTest.git
+git push -u origin master
+
+
+
+ssh:
+…or create a new repository on the command line
+echo # GitTest >> README.md
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:Sugerming/GitTest.git
+git push -u origin master
+
+
+…or push an existing repository from the command line
+git remote add origin git@github.com:Sugerming/GitTest.git
+git push -u origin master
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+步骤2：
+
+然后这个时候你使用下面指令提交代码：
+
+git push -u origin master
+1
+系统会提示：
+
+The authenticity of host 'github.com (192.30.252.131)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.131' (RSA) to the list of known h                             osts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+1
+2
+3
+4
+5
+6
+7
+8
+说明你权限不够。所以这时你需要在本地创建自己的RSA的key。如下：
+
+ssh-keygen -t rsa -C "用户名"
+1
+然后系统会问你保存路径等东西，我直接enter跳过了。
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/AlexYi/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+1
+2
+3
+4
+然后系统会生成一些东西：
+
+Your identification has been saved in /c/Users/AlexYi/.ssh/id_rsa.
+Your public key has been saved in /c/Users/AlexYi/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:rxfK05d7oZWpDvQ5dRQM0Na7...
+The key's randomart image is:
++---[RSA 2048]----+
+|           .o.+. |
+|             o o.|
+|            .   o|
+|               o |
+...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+最主要的是告诉你，你的可以在：
+
+Your public key has been saved in /c/Users/AlexYi/.ssh/id_rsa.pub
+1
+找到这个文件，然后用记事本打开，就可以看到自己的key：
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADA...
+1
+步骤3：
+
+然后将生成的rsa 的key添加到版本库中即可，方法： 
+打开自己的版本库，点击右边的 Settings 进入配置页。 
+然后点击左边导航栏的： Deploy keys 进入添加key页面 
+然后点击： Add deploy keys ，将自己的内容输入进去就可以了。 
+这样就完成了。
+
+最后继续提交更改的代码，使用：
+
+git push -u origin master
+1
+可以提交成功。
+
+补充：
+
+如果要使用 git push简短提交代码：
+
+git push
+1
+需要配置 :
+
+git config --global push.default simple
+1
+或者：
+
+git config --global push.default matching
+1
+区别在于，前者只提交你当前所在的分支，而后者会提交本地所有的分支。具体的自己去查一下就明白了

@@ -1,0 +1,10 @@
+1,git clone url 下载
+2,git add/rm 更新和删除
+3,git commit -m "xxx " 表示记录
+4,git --global user.name/email "账户名字"
+5,git push/pull 提交和下载
+6,git log 日志
+7,git --global push.default simple/match
+8,
+9,
+10,

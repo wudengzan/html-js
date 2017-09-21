@@ -7,7 +7,7 @@ zfa(
 Vim并不会自动记忆手工折叠。但你可以使用以下命令，来保存当前的折叠状态：
 :mkview
 在下次打开文档时，使用以下命令，来载入记忆的折叠信息：
-:loadview
+9.:loadview
 可以使用以下命令，查看关于手工折叠的帮助信息：
 :help fold-manual
 Indent Fold

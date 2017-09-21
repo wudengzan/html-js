@@ -1,37 +1,38 @@
-## Welcome to GitHub Pages
+:set foldmethod=manual
+在可视化模式下，使用以下命令，将折叠选中的文本：
+zf
+通过组合使用移动命令，可以折叠指定的行。例如：使用zf70j命令，将折叠光标之后的70行；使用5zF命令，将当前行及随后4行折叠起来；使用zf7G命令，将当前行至全文第7行折叠起来。
+我们也可以使用以下命令，折叠括号（比如()、[]、{}、><等）包围的区域：
+zfa(
+Vim并不会自动记忆手工折叠。但你可以使用以下命令，来保存当前的折叠状态：
+:mkview
+在下次打开文档时，使用以下命令，来载入记忆的折叠信息：
+:loadview
+可以使用以下命令，查看关于手工折叠的帮助信息：
+:help fold-manual
+Indent Fold
+使用以下命令，启用缩进折叠。所有文本将按照（选项shiftwidth 定义的）缩进层次自动折叠。
+:set foldmethod=indent
+使用zm命令，可以手动折叠缩进；而利用zr命令，则可以打开折叠的缩进。
+使用以下命令，将可以根据指定的级别折叠缩进：
+:set foldlevel=1
+可以使用以下命令，查看关于缩进折叠的帮助信息：
+:help fold-indent
+Syntax Fold
+使用以下命令，启用语法折叠。所有文本将按照语法结构自动折叠。
+:set foldmethod=syntax
+可以使用以下命令，查看关于语法折叠的帮助信息：
+:help fold-syntax
+Marker Fold
+使用以下命令，启用标记折叠。所有文本将按照特定标记（默认为{{{和}}}）自动折叠。
+:set foldmethod=marker
+我们可以利用标记折叠，在文本中同时体现结构和内容，并且能够快速跳转到文件的不同部分。
 
-You can use the [editor on GitHub](https://github.com/wudengzan/html-js/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+可以使用以下命令，查看关于标记折叠的帮助信息：
+:help fold-marker
+折叠选项
+使用:set foldcolumn=W命令（W是一个0-12的整数），将在屏幕左侧显示一个折叠标识列，分别用“-”和“+”而表示打开和关闭的折叠。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wudengzan/html-js/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+使用以下命令，可以查看关于折叠的帮助信息：
+:help folding
+命令小结 zc 关闭当前打开的折叠 zo 打开当前的折叠 zm 关闭所有折叠 zM 关闭所有折叠及其嵌套的折叠 zr 打开所有折叠 zR 打开所有折叠及其嵌套的折叠 zd 删除当前折叠 zE 删除所有折叠 zj 移动至下一个折叠 zk 移动至上一个折叠 zn 禁用折叠 zN 启用折叠

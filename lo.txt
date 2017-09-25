@@ -1,0 +1,25 @@
+    1  top
+    2  apt-get dist-upgrade
+    3  uname -r
+    4  dpkg -l
+    5  apt-get update
+    6  apt-get upgrade
+    7  apt-get dist-upgrade
+    8  uname -a
+    9  #
+   10  mkdir ~/.fonts && cp simsun.ttc tahoma.ttf tahomabd.ttf unifont.pcf ~/.fonts/
+   11  vim ~/.Xdefaults
+   12  top
+   13  apt-get install git
+   14  apt-get install git
+   15  git
+   16  git clone https://github.com/wudengzan/html-js
+   17  ll
+   18  ll
+   19  ls
+   20  cd html-js/
+   21  ll
+   22  ls
+   23  echo $LANG
+   24  locale
+   25  history >lo.txt

@@ -1,0 +1,86 @@
+88ijy777y:wq
+
+    1  top
+    2  apt-get dist-upgrade
+    3  uname -r
+    4  dpkg -l
+    5  apt-get update
+    6  apt-get upgrade
+    7  apt-get dist-upgrade
+    8  uname -a
+    9  #
+   10  mkdir ~/.fonts && cp simsun.ttc tahoma.ttf tahomabd.ttf unifont.pcf ~/.fonts/
+   11  vim ~/.Xdefaults
+   12  top
+   13  apt-get install git
+   14  apt-get install git
+   15  git
+   16  git clone https://github.com/wudengzan/html-js
+   17  ll
+   18  ll
+   19  ls
+   20  cd html-js/
+   21  ll
+   22  ls
+   23  echo $LANG
+   24  locale
+   25  history >lo.txt
+   26  git add *
+   27  git commit -m "b"
+   28  git cobfig --global user.
+   29  git cobfig --global user.email "nice1297307@outlook.com"
+   30  git config --global user.email "nice1297307@outlook.com"
+   31  git config --global user.name "wudengzan"
+   32  git push
+   33  git push
+   34  git config --global push.default simple
+   35  git push
+   36  vim .gitconfig
+   37  vim .git-credentials
+   38  vim y.txt
+   39  git add *
+   40  vim /root/.gitconfig 
+   41  g5it status
+   42  git status
+   43  git config --global push.defaul
+   44  git push
+   45  git config --global push.default matching
+   46  git push
+   47  git config --global push.default simple
+   48  git push
+   49  git config --global push.default matching
+   50  git push
+   51  wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
+   52  ll
+   53  zip
+   54  tar zxf bootstrap-3.3.7-dist.zip 
+   55  wget https://github.com/twbs/bootstrap/archive/v3.3.7.zip
+   56  ls
+   57  aptitude install locales
+   58  apt-get install locales
+   59  dpkg-reconfigure locales
+   60  dpkg-reconfigure locales
+   61  dpkg-reconfigure locales
+   62  dpkg-reconfigure locales
+   63  dpkg-reconfigure locales
+   64  �ll
+   65  模具
+   66  dpkg-reconfigure locales
+   67  恩率
+   68  ll
+   69  ls
+   70  cd html-js
+   71  ls
+   72  unzip
+   73  unzip v3.3.7.zip 
+   74  ll
+   75  ls
+   76  vd bootstrap-3.3.7
+   77  cd bootstrap-3.3.7
+   78  ls
+   79  cd ..
+   80  ls
+   81  rm -rf v3.3.7.zip bootstrap-3.3.7.zip
+   82  ls
+   83  history >>linux教程/
+   84  history >>y.txt 
